@@ -1,0 +1,11 @@
+@use '../utils/_typos.scss' as *;
+@use '../variables/_variables.scss' as *;
+
+footer {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    flex-shrink: 0;
+}
+

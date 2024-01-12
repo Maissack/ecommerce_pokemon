@@ -1,0 +1,22 @@
+@use '../utils/_typos.scss' as *;
+@use '../variables/_variables.scss' as *;
+
+#home-content {
+    padding: 20px;
+    text-align: center;
+    color: #333; 
+	background-image: url("img/background-accueil.jpg");
+	height: 89vh;
+}
+
+#buy-button {
+	display: inline-block;
+	padding: 10px 20px;
+	margin-top: 20px;
+	background-color: #3498db;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+
