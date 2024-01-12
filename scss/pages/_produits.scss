@@ -2,23 +2,116 @@
 @use '../variables/_variables.scss' as *;
 
 
-main {
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+header {
+    background-color: #3498db;
+    color: white;
+    padding: 1em;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .navbar-logo {
+        img {
+            max-width: 100px;
+            height: auto;
+        }
+    }
+
+    .navbar-links {
+        list-style: none;
+        display: flex;
+
+        li {
+            margin-right: 20px;
+
+            a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+
+
+            }
+        }
+    }
+}
+
+#search-bar {
+    background-color: #ffffff;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+        padding: 0.5em;
+        margin-right: 1em;
+        border: 1px solid #bdc3c7;
+        border-radius: 4px;
+        width: 200px;
+    }
+
+    button {
+        padding: 0.5em 1em;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    label {
+        margin-right: 0.5em;
+    }
+
+    select {
+        padding: 0.5em;
+        border: 1px solid #bdc3c7;
+        border-radius: 4px;
+    }
+}
+
+#pokemon-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 1em;
-}
 
-.pokemon-card {
-    background-color: #ecf0f1;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1em;
-    margin: 1em;
-    text-align: center;
+    .pokemon-card {
+        background-color: #ecf0f1;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 1em;
+        margin: 1em;
+        text-align: center;
 
-    img {
-        max-width: 100%;
-        height: auto;
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
     }
 }
+

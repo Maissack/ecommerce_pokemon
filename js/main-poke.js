@@ -183,4 +183,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 detailsElement.innerHTML = `<p>${error.message}</p>`;
             });
     });
+
+    
 });
+
+
