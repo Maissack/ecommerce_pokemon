@@ -19,7 +19,7 @@ function updateCartDisplay() {
                                     <p>Type: ${pokemon.type}</p>
                                     <p>Niveau: ${pokemon.level}</p>
                                     <p>Prix: ${pokemon.price} €<br></p>
-                                    <button class="remove-btn">Supprimer</button>`;
+                                    <button class="remove-btn delete-animation">Supprimer</button>`;
         
         // Ajoutez le pokemonElement à votre panier ou à l'élément cart-elements
         document.getElementById('cart-elements').appendChild(pokemonElement);
@@ -65,7 +65,7 @@ function addToCart(pokemon) {
      // Créer un élément de confirmation
      const confirmationElement = document.createElement('div');
      confirmationElement.classList.add('add-to-cart-confirmation');
-     confirmationElement.textContent = `Pokémon ajouté au panier: ${pokemon.name}`;
+     confirmationElement.textContent = `${pokemon.name} ajouté !`;
  
      // Ajouter l'élément de confirmation au corps du document
      document.body.appendChild(confirmationElement);
@@ -99,3 +99,4 @@ function removeFromCart(pokemon) {
 
 // Mettre à jour l'affichage du panier lors du chargement initial
 updateCartDisplay();
+

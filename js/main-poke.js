@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let pokemonList = [];
 
+
     // Fonction pour générer ou obtenir un niveau aléatoire du cache local
     function generateOrGetFixedLevel(pokemonName) {
         const cachedLevel = localStorage.getItem(`${pokemonName}_level`);
@@ -32,6 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
             return price;
         }
     }
+
+    
 
 
     function displayPokemonList(pokemonArray) {
@@ -201,6 +204,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 detailsElement.innerHTML = `<p>${error.message}</p>`;
             });
     });
+
+    
 
     
 });
