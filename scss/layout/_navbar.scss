@@ -1,15 +1,14 @@
 @use '../utils/_typos.scss' as *;
 @use '../variables/_variables.scss' as *;
 
-header {
-    padding: 10px 20px;
-}
+
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffd700;
+    background-color: $color-primary-rouge; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .navbar-logo img {
@@ -33,5 +32,5 @@ header {
 }
 
 .navbar-links a:hover {
-    color: #ffd700;
+    color: $color-secondary-jaune;
 }

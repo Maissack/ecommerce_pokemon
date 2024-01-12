@@ -81,12 +81,14 @@ document.addEventListener('DOMContentLoaded', function () {
             detailsBox.appendChild(detailsTitle);
             detailsBox.appendChild(detailsList);
     
+            // Ajout d'un saut de ligne (br) entre le prix et le bouton
+            detailsBox.appendChild(document.createElement('br'));
+    
             // Bouton Ajouter au panier
             const addToCartBtn = document.createElement('button');
             addToCartBtn.textContent = 'Ajouter au panier';
             addToCartBtn.addEventListener('click', function () {
                 addToCart(pokemon);
-                
             });
     
             card.appendChild(name);
@@ -96,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
             mainElement.appendChild(card);
         });
     }
+    
     
 
     function fillTypeFilterOptions(types) {
@@ -125,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
         displayPokemonList(pokemonList);
     }
 
-    fetch('https://pokeapi.co/api/v2/pokemon/?limit=20')
+    fetch('https://pokeapi.co/api/v2/pokemon/?limit=48')
         .then(response => response.json())
         .then(data => {
             const types = new Set();
@@ -189,8 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.json();
             })
             .then(data => {
-                detailsElement.innerHTML = `<h3>${data.name.toUpperCase()}</h3>
-                                            <img src="${data.sprites.front_default}" alt="${data.name}">`;
+                detailsElement.innerHTML = ``;
 
                 const filteredList = pokemonList.filter(pokemon => pokemon.name.toLowerCase() === pokemonName);
                 displayPokemonList(filteredList);

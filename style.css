@@ -1,21 +1,10 @@
 @charset "UTF-8";
-footer {
-  background-color: #3498db;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-  flex-shrink: 0;
-}
-
-header {
-  background-color: #394240;
-  padding: 10px 20px;
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #ef5350;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-logo img {
@@ -44,55 +33,87 @@ header {
 
 #home-content {
   padding: 20px;
-  text-align: center;
-  color: #333;
   background-image: url("img/background-accueil.jpg");
-  height: 89vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 #home-content p {
-  color: black;
+  color: #fff;
   margin-bottom: 20px;
-  font-size: 3vw; /* Utiliser la taille de police responsive */
+  font-size: 3vw;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 #home-content #buy-button {
   display: inline-block;
-  padding: 15px 30px; /* Ajuster la taille du padding pour rendre le bouton plus gros */
+  padding: 15px 30px;
   margin-top: 20px;
-  background-color: #3498db;
+  background-color: #ef5350;
   color: #fff;
   text-decoration: none;
-  border-radius: 10px; /* Augmenter le rayon de la bordure pour un aspect plus arrondi */
-  transition: background-color 0.3s ease; /* Ajouter une transition pour l'effet hover */
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 #home-content #buy-button:hover {
-  background-color: #2980b9; /* Changer la couleur de fond au survol */
+  background-color: #ffd700;
+  transform: scale(1.05);
 }
 
-#panier-content {
-  padding: 20px;
-  text-align: center;
-  color: #333;
-}
-
-body {
-  font-family: "Arial", sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
-}
-
-header {
-  background-color: #3498db;
-  color: white;
+#cart-elements {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   padding: 1em;
+}
+#cart-elements .cart-item {
+  background-color: #3498db;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  margin: 1em;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+#cart-elements .cart-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+#cart-elements .cart-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+#cart-elements .cart-item p {
+  margin: 10px 0;
+}
+#cart-elements .cart-item .remove-btn {
+  padding: 0.5em 1em;
+  background-color: #ffd700;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#cart-elements .cart-item .remove-btn:hover {
+  background-color: #ccac00;
+  transform: scale(1.05);
+}
+
+#total-price {
+  margin-top: 20px;
+  font-size: 1.2em;
+  text-align: center;
 }
 
 #search-bar {
-  background-color: #ffffff;
+  background-color: #ffd700;
   padding: 1em;
   margin: 1em 0;
   border-radius: 8px;
@@ -105,25 +126,42 @@ header {
 #search-bar input {
   padding: 0.5em;
   margin-right: 1em;
-  border: 1px solid #bdc3c7;
+  border: 1px solid #ccac00;
   border-radius: 4px;
   width: 200px;
 }
 #search-bar button {
   padding: 0.5em 1em;
-  background-color: #3498db;
-  color: white;
+  background-color: #ef5350;
+  color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#search-bar button:hover {
+  background-color: #eb2521;
+  transform: scale(1.05);
 }
 #search-bar label {
   margin-right: 0.5em;
+  color: black;
 }
 #search-bar select {
   padding: 0.5em;
-  border: 1px solid #bdc3c7;
+  border: 1px solid #ccac00;
   border-radius: 4px;
+  font-family: "Pokemon", sans-serif;
+  background-color: #ffd700;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+#search-bar select:hover {
+  background-color: #ccac00;
+}
+#search-bar select option {
+  background-color: #ffd700;
+  color: black;
 }
 
 #pokemon-list {
@@ -133,7 +171,7 @@ header {
   padding: 1em;
 }
 #pokemon-list .pokemon-card {
-  background-color: #ecf0f1;
+  background-color: #3498db;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1em;
@@ -147,11 +185,16 @@ header {
 }
 #pokemon-list .pokemon-card button {
   padding: 0.5em 1em;
-  background-color: #2ecc71;
-  color: white;
+  background-color: #ffd700;
+  color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#pokemon-list .pokemon-card button:hover {
+  background-color: #ccac00;
+  transform: scale(1.05);
 }
 
 .pokemon-details-list {
@@ -167,6 +210,28 @@ header {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.add-to-cart-confirmation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ef5350;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  animation: pop 0.5s ease-out;
+}
+
+@keyframes pop {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
   padding: 0;

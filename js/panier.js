@@ -12,13 +12,19 @@ function updateCartDisplay() {
     // Afficher chaque Pokémon dans le panier
     cart.forEach(pokemon => {
         const pokemonElement = document.createElement('div');
+        pokemonElement.classList.add('cart-item'); 
         pokemonElement.innerHTML = `<img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
                                     <p>${pokemon.name}</p>
+                                    <p>Caractéritstiques:</p>
                                     <p>Type: ${pokemon.type}</p>
                                     <p>Niveau: ${pokemon.level}</p>
-                                    <p>Prix: ${pokemon.price} €</p>
+                                    <p>Prix: ${pokemon.price} €<br></p>
                                     <button class="remove-btn">Supprimer</button>`;
-        cartElement.appendChild(pokemonElement);
+        
+        // Ajoutez le pokemonElement à votre panier ou à l'élément cart-elements
+        document.getElementById('cart-elements').appendChild(pokemonElement);
+    
+    
 
         // Ajouter un gestionnaire d'événements pour le bouton "Supprimer"
         const removeBtn = pokemonElement.querySelector('.remove-btn');
@@ -55,6 +61,20 @@ function addToCart(pokemon) {
 
     // Enregistrer le panier mis à jour dans le stockage local
     localStorage.setItem('cart', JSON.stringify(cart));
+
+     // Créer un élément de confirmation
+     const confirmationElement = document.createElement('div');
+     confirmationElement.classList.add('add-to-cart-confirmation');
+     confirmationElement.textContent = `Pokémon ajouté au panier: ${pokemon.name}`;
+ 
+     // Ajouter l'élément de confirmation au corps du document
+     document.body.appendChild(confirmationElement);
+ 
+     // Supprimer l'élément de confirmation après un court délai
+     setTimeout(() => {
+         document.body.removeChild(confirmationElement);
+     }, 1000);
+
 
     // Mettre à jour l'affichage sur la page panier.html
     updateCartDisplay();

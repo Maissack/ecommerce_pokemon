@@ -1,11 +1,8 @@
 @use '../utils/_typos.scss' as *;
 @use '../variables/_variables.scss' as *;
 
-
-
-
 #search-bar {
-    background-color: #ffffff;
+    background-color: $color-secondary-jaune; // Couleur principale de Pokémon
     padding: 1em;
     margin: 1em 0;
     border-radius: 8px;
@@ -18,28 +15,48 @@
     input {
         padding: 0.5em;
         margin-right: 1em;
-        border: 1px solid #bdc3c7;
+        border: 1px solid darken($color-secondary-jaune, 10%); // Assombrir légèrement
         border-radius: 4px;
         width: 200px;
     }
 
     button {
         padding: 0.5em 1em;
-        background-color: #3498db;
-        color: white;
+        background-color: $color-primary-rouge; // Couleur principale de Pokémon
+        color: black;
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+
+        &:hover {
+            background-color: darken($color-primary-rouge, 10%); // Assombrir légèrement au survol
+            transform: scale(1.05);
+        }
     }
 
     label {
         margin-right: 0.5em;
+        color: black; 
     }
 
     select {
         padding: 0.5em;
-        border: 1px solid #bdc3c7;
+        border: 1px solid darken($color-secondary-jaune, 10%);
         border-radius: 4px;
+        font-family: 'Pokemon', sans-serif; // Utilisation de la police Pokémon
+        background-color: $color-secondary-jaune; // Couleur principale de Pokémon
+        color: black;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            background-color: darken($color-secondary-jaune, 10%);
+        }
+
+        option {
+            background-color: $color-secondary-jaune;
+            color: black;
+        }
     }
 }
 
@@ -50,7 +67,7 @@
     padding: 1em;
 
     .pokemon-card {
-        background-color: #ecf0f1;
+        background-color: $color-tertiary-bleu; // Couleur tertiaire de Pokémon
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 1em;
@@ -65,17 +82,22 @@
 
         button {
             padding: 0.5em 1em;
-            background-color: #2ecc71;
-            color: white;
+            background-color: $color-secondary-jaune; // Couleur principale de Pokémon
+            color: black;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+
+            &:hover {
+                background-color: darken($color-secondary-jaune, 10%); // Assombrir légèrement au survol
+                transform: scale(1.05);
+            }
         }
     }
 }
 
 // Pour enlever les bullets points 
-
 .pokemon-details-list {
     list-style: none;
     padding: 0;
@@ -88,5 +110,31 @@
     &:hover {
         transform: scale(1.05); 
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    }
+}
+
+
+// Animation ajouter le pokémon dans le panier
+.add-to-cart-confirmation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-primary-rouge;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    animation: pop 0.5s ease-out;
+}
+
+@keyframes pop {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
     }
 }

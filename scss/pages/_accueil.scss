@@ -3,33 +3,37 @@
 
 #home-content {
     padding: 20px;
-    text-align: center;
-    color: #333;
     background-image: url("img/background-accueil.jpg");
-    height: 89vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; // Centrer l'image de fond
+    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     p {
-        color: black;
+        color: #fff; // Changer la couleur du texte en blanc
         margin-bottom: 20px;
         font-size: 3vw;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); // Ajouter une ombre au texte
     }
 
     #buy-button {
         display: inline-block;
         padding: 15px 30px;
         margin-top: 20px;
-        background-color: #3498db;
+        background-color: $color-primary-rouge;
         color: #fff;
         text-decoration: none;
         border-radius: 10px;
-        transition: background-color 0.3s ease;
-    }
-
-    #buy-button:hover {
-        background-color: #2980b9;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
+    
+        &:hover {
+            background-color: $color-secondary-jaune;
+            transform: scale(1.05);
+        }
     }
 }
