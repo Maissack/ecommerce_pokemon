@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+
     function displayPokemonList(pokemonArray) {
         mainElement.innerHTML = '';
     
@@ -80,9 +81,18 @@ document.addEventListener('DOMContentLoaded', function () {
             detailsBox.appendChild(detailsTitle);
             detailsBox.appendChild(detailsList);
     
+            // Bouton Ajouter au panier
+            const addToCartBtn = document.createElement('button');
+            addToCartBtn.textContent = 'Ajouter au panier';
+            addToCartBtn.addEventListener('click', function () {
+                addToCart(pokemon);
+                
+            });
+    
             card.appendChild(name);
             card.appendChild(image);
             card.appendChild(detailsBox);
+            card.appendChild(addToCartBtn);
             mainElement.appendChild(card);
         });
     }
