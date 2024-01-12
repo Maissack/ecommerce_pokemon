@@ -35,52 +35,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function displayPokemonList(pokemonArray) {
         mainElement.innerHTML = '';
-
+    
         pokemonArray.forEach(pokemon => {
             const card = document.createElement('div');
             card.classList.add('pokemon-card');
-
+    
             const name = document.createElement('h3');
             name.textContent = `${pokemon.name}`;
-
+    
             const image = document.createElement('img');
             image.src = pokemon.sprites.front_default;
             image.alt = pokemon.name;
-
+    
             const detailsBox = document.createElement('div');
             detailsBox.classList.add('pokemon-details-box');
-
+    
             const detailsTitle = document.createElement('h4');
             detailsTitle.textContent = 'Caractéristiques :';
-
+    
             const detailsList = document.createElement('ul');
             detailsList.classList.add('pokemon-details-list');
-
-            // Modification ici pour afficher type, niveau et prix sur des lignes distinctes
-            const typesListItem = document.createElement('li');
+    
+            // Type
+            const typeListItem = document.createElement('li');
             const typeSpan = document.createElement('span');
             typeSpan.textContent = `Type: ${pokemon.type}`;
-            typesListItem.appendChild(typeSpan);
-
+            typeListItem.appendChild(typeSpan);
+            detailsList.appendChild(typeListItem);
+    
+            // Niveau
+            const levelListItem = document.createElement('li');
             const levelSpan = document.createElement('span');
             levelSpan.textContent = `Niveau: ${pokemon.level}`;
-            typesListItem.appendChild(levelSpan);
-
+            levelListItem.appendChild(levelSpan);
+            detailsList.appendChild(levelListItem);
+    
+            // Prix
+            const priceListItem = document.createElement('li');
             const priceSpan = document.createElement('span');
             priceSpan.textContent = `Prix: ${pokemon.price} €`;
-            typesListItem.appendChild(priceSpan);
-
-            detailsList.appendChild(typesListItem);
-
+            priceListItem.appendChild(priceSpan);
+            detailsList.appendChild(priceListItem);
+    
             detailsBox.appendChild(detailsTitle);
             detailsBox.appendChild(detailsList);
-
+    
             card.appendChild(name);
             card.appendChild(image);
             card.appendChild(detailsBox);
             mainElement.appendChild(card);
         });
     }
+    
 
     function fillTypeFilterOptions(types) {
         typeFilter.innerHTML = '<option value="">Tous les types</option>';

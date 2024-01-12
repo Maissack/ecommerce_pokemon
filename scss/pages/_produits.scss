@@ -2,48 +2,7 @@
 @use '../variables/_variables.scss' as *;
 
 
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-}
 
-header {
-    background-color: #3498db;
-    color: white;
-    padding: 1em;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .navbar-logo {
-        img {
-            max-width: 100px;
-            height: auto;
-        }
-    }
-
-    .navbar-links {
-        list-style: none;
-        display: flex;
-
-        li {
-            margin-right: 20px;
-
-            a {
-                text-decoration: none;
-                color: white;
-                font-weight: bold;
-
-
-            }
-        }
-    }
-}
 
 #search-bar {
     background-color: #ffffff;
@@ -115,3 +74,19 @@ header {
     }
 }
 
+// Pour enlever les bullets points 
+
+.pokemon-details-list {
+    list-style: none;
+    padding: 0;
+}
+
+// Les cartes Pokémons
+.pokemon-card {
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05); 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    }
+}

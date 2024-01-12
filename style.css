@@ -56,16 +56,20 @@ header {
 #home-content p {
   color: black;
   margin-bottom: 20px;
-  font-size: 70px;
+  font-size: 3vw; /* Utiliser la taille de police responsive */
 }
 #home-content #buy-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 15px 30px; /* Ajuster la taille du padding pour rendre le bouton plus gros */
   margin-top: 20px;
   background-color: #3498db;
   color: #fff;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 10px; /* Augmenter le rayon de la bordure pour un aspect plus arrondi */
+  transition: background-color 0.3s ease; /* Ajouter une transition pour l'effet hover */
+}
+#home-content #buy-button:hover {
+  background-color: #2980b9; /* Changer la couleur de fond au survol */
 }
 
 #panier-content {
@@ -85,28 +89,6 @@ header {
   background-color: #3498db;
   color: white;
   padding: 1em;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.navbar .navbar-logo img {
-  max-width: 100px;
-  height: auto;
-}
-.navbar .navbar-links {
-  list-style: none;
-  display: flex;
-}
-.navbar .navbar-links li {
-  margin-right: 20px;
-}
-.navbar .navbar-links li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
 }
 
 #search-bar {
@@ -170,6 +152,19 @@ header {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.pokemon-details-list {
+  list-style: none;
+  padding: 0;
+}
+
+.pokemon-card {
+  transition: transform 0.3s ease-in-out;
+}
+.pokemon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 * {

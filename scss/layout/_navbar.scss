@@ -2,7 +2,6 @@
 @use '../variables/_variables.scss' as *;
 
 header {
-    background-color: #394240;
     padding: 10px 20px;
 }
 
@@ -10,6 +9,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #ffd700;
 }
 
 .navbar-logo img {
